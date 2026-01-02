@@ -1,5 +1,5 @@
-حتماً 👍
-این متن رو دقیقاً می‌تونی کپی کنی بذاری داخل README.md گیت‌هاب. انگلیسیه و با Markdown نوشته شده.
+
+.
 # Circuit Node Voltage Solver (Python) This project is a **Python-based circuit analysis tool** that solves electrical circuits using the **Node Voltage Method (Nodal Analysis)**. It supports resistors, independent current sources, and a defined ground node. The program automatically builds the admittance matrix and solves for node voltages using **NumPy**. --- ## 📌 Features - Node Voltage Method (KCL-based analysis) - Supports: - Any number of nodes - Any number of resistors - Independent current sources - Automatic ground node handling - Computes: - Node voltages - Branch currents through resistors - Uses linear algebra (`numpy.linalg.solve`) --- ## 🧠 Theory Used This solver is based on **nodal analysis**, where: - Kirchhoff’s Current Law (KCL) is applied at each non-ground node - The circuit is represented as: \[ Y \cdot V = I \] where: - `Y` is the nodal admittance matrix - `V` is the vector of node voltages - `I` is the current injection vector --- ## 🛠 Requirements - Python 3.x - NumPy Install NumPy if not already installed: ```bash pip install numpy 
 
 ▶️ How to Run
@@ -80,4 +80,4 @@ Error checking for singular matrices
 
 Developed for educational purposes in Electrical Engineering & Circuit Analysis.
 Feel free to fork, improve, and use it in your projects!
---- اگه دوست داشتی، می‌تونم: - اسم پروژه رو حرفه‌ای‌تر کنم - یه **diagram مدار** هم با ASCII یا matplotlib اضافه کنم - یا کدت رو OOP تمیزتر و مهندسی‌تر بازنویسی کنم 😎
+
