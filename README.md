@@ -1,83 +1,118 @@
+```markdown
+# Circuit Node Voltage Solver (Python)
 
-.
-# Circuit Node Voltage Solver (Python) This project is a **Python-based circuit analysis tool** that solves electrical circuits using the **Node Voltage Method (Nodal Analysis)**. It supports resistors, independent current sources, and a defined ground node. The program automatically builds the admittance matrix and solves for node voltages using **NumPy**. --- ## 📌 Features - Node Voltage Method (KCL-based analysis) - Supports: - Any number of nodes - Any number of resistors - Independent current sources - Automatic ground node handling - Computes: - Node voltages - Branch currents through resistors - Uses linear algebra (`numpy.linalg.solve`) --- ## 🧠 Theory Used This solver is based on **nodal analysis**, where: - Kirchhoff’s Current Law (KCL) is applied at each non-ground node - The circuit is represented as: \[ Y \cdot V = I \] where: - `Y` is the nodal admittance matrix - `V` is the vector of node voltages - `I` is the current injection vector --- ## 🛠 Requirements - Python 3.x - NumPy Install NumPy if not already installed: ```bash pip install numpy 
+This is a **Python-based circuit analysis tool** that solves electrical circuits using the **Node Voltage Method (Nodal Analysis)**.  
+It can handle resistors, independent current sources, and a user-defined ground node. The program automatically constructs the nodal admittance matrix and computes node voltages using **NumPy**.
 
-▶️ How to Run
+---
 
-Clone the repository:
-git clone https://github.com/your-username/circuit-node-voltage-solver.git 
+## Features
 
-Navigate to the project directory:
-cd circuit-node-voltage-solver 
+- Solves circuits using the **Node Voltage Method** (KCL-based analysis)
+- Supports:
+  - Any number of nodes
+  - Any number of resistors
+  - Independent current sources
+- Automatic ground node handling
+- Calculates:
+  - Node voltages relative to ground
+  - Currents through each resistor
+- Efficient linear algebra computation using `numpy.linalg.solve`
 
-Run the script:
-python main.py 
+---
 
-🧾 User Inputs
+## How It Works
 
-When running the program, you will be prompted to enter:
+The solver is based on **nodal analysis**, where Kirchhoff’s Current Law (KCL) is applied at each non-ground node:
 
-Number of nodes (including ground)
+```
 
-Node names
+Y · V = I
 
-Ground node
+```
 
-Number of resistors
+- `Y` → Nodal admittance matrix  
+- `V` → Node voltage vector  
+- `I` → Current injection vector  
 
-First node
+Branch currents are then computed using Ohm’s Law:
 
-Second node
+```
 
-Resistance value (Ohms)
+I_R = (V_node1 - V_node2) / R
 
-Number of current sources
+````
 
-Node
+---
 
-Current value (Amps)
+## Requirements
 
-📤 Output
+- Python 3.x  
+- NumPy
 
-Node Voltages
+Install NumPy if needed:
 
-Voltage at each node relative to ground
+```bash
+pip install numpy
+````
 
-Branch Currents
+---
 
-Current through each resistor calculated using:
-[
-I = \frac{V_1 - V_2}{R}
-]
+## Usage
 
-📁 Code Structure
+1. Clone the repository:
 
-Circuit class:
+```bash
+git clone https://github.com/your-username/circuit-node-voltage-solver.git
+cd circuit-node-voltage-solver
+```
 
-make_matrix() → builds admittance matrix and current vector
+2. Run the program:
 
-solve() → solves node voltages and branch currents
+```bash
+python main.py
+```
 
-Uses dictionaries to map node names to matrix indices
+3. Input the requested information:
 
-📌 Example
+   * Number of nodes (including ground)
+   * Node names
+   * Ground node
+   * Number of resistors and their connections
+   * Number of current sources and their values
 
-Node voltages: V A = 5.0 V B = 2.5 V GND = 0 Branch currents: I_R1 = 0.01 I_R2 = 0.005 
+---
 
-🚀 Future Improvements
+## Example Output
 
-Support for voltage sources
+```
+Node voltages:
+V A = 5.0 V
+V B = 2.5 V
+V GND = 0 V
 
-AC analysis (complex impedance)
+Branch currents:
+I_R1 = 0.01 A
+I_R2 = 0.005 A
+```
 
-GUI interface
+---
 
-Netlist file input
+## Future Improvements
 
-Error checking for singular matrices
+* Support for voltage sources
+* AC analysis with complex impedance
+* GUI interface for easy input
+* Netlist file input
+* Enhanced error handling for singular matrices
 
-👨‍💻 Author
+---
 
-Developed for educational purposes in Electrical Engineering & Circuit Analysis.
-Feel free to fork, improve, and use it in your projects!
+## Author
+
+Developed as an educational tool for **Electrical Engineering and Circuit Analysis**.
+Open to improvements and contributions.
+
+```
+```
 
